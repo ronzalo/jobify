@@ -1,0 +1,30 @@
+{
+  "jobs": [
+    {
+      "id": "rails-and-react-full-stack-developer-get-on-board-remoto",
+      "title": "Rails and React Full-Stack Developer",
+      "recommended": false,
+      "pinned": true,
+      "is_hot": false,
+      "salary": "4200 - 5000",
+      "description": "<p><strong>Our tech stack includes: ...",
+      "functions": "<p>Our product was born to a technology company, so ...",
+      "benefits": "<p>Along with the perks is our culture. We are an ...",
+      "remote": true,
+      "city": null,
+      "country": null,
+      "country_flag_url": null,
+      "new": false,
+      "seniority": "Expert",
+      "logo_url": "https://getonbrd-prod.s3.amazonaws.com/uploads/users/logo/1/ISO_NEGATIVE-padding-getonboard.png",
+      "url": "/empleos/programacion/rails-and-react-full-stack-developer-get-on-board-remoto",
+      "modality": "Full time",
+      "published_at": "nov 12",
+      "company": {
+        "name": "Get on Board",
+        "about": "This is us! We are set to shape and transform the digital job market in Latin America...",
+        "url": "/companies/get-on-board"
+      }
+    }
+  ]
+}
