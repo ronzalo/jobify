@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: favorite_jobs
+#
+#  id         :integer          not null, primary key
+#  slug       :string
+#  url        :string
+#  metadata   :json
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slug: rails-react
+  url: rails-react
+  metadata: {}
+
+two:
+  slug: python-vue
+  url: python-vue
+  metadata: {}

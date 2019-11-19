@@ -20,7 +20,7 @@ module Api
         @favorite_job = FavoriteJob.new(favorite_job_params)
 
         if @favorite_job.save
-          render json: @favorite_job, status: :created, location: @favorite_job
+          render json: @favorite_job, status: :created, location: [:api, :v1, @favorite_job]
         else
           render json: @favorite_job.errors, status: :unprocessable_entity
         end
