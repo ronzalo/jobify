@@ -49,7 +49,7 @@ module Api
 
       # Only allow a trusted parameter "white list" through.
       def favorite_job_params
-        params.require(:favorite_job).permit(:slug, :url, :metadata)
+        params.require(:favorite_job).permit(:slug, :url, metadata: {})
       end
     end
   end
