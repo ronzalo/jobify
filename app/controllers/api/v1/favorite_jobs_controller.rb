@@ -1,7 +1,7 @@
 module Api
   module V1
     class FavoriteJobsController < ApplicationController
-      before_action :set_favorite_job, only: [:show, :update, :destroy]
+      before_action :set_favorite_job, only: :show
 
       # GET /api/v1/favorite_jobs
       def index
@@ -24,20 +24,6 @@ module Api
         else
           render json: @favorite_job.errors, status: :unprocessable_entity
         end
-      end
-
-      # PATCH/PUT /api/v1/favorite_jobs/1
-      def update
-        if @favorite_job.update(favorite_job_params)
-          render json: @favorite_job
-        else
-          render json: @favorite_job.errors, status: :unprocessable_entity
-        end
-      end
-
-      # DELETE /api/v1/favorite_jobs/1
-      def destroy
-        @favorite_job.destroy
       end
 
       private

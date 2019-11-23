@@ -13,7 +13,11 @@
 require 'test_helper'
 
 class FavoriteJobTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "the truth" do
+    @job = favorite_jobs(:one)
+
+    assert_raises(ActiveRecord::RecordInvalid) do
+      @job.dup.save!
+    end
+  end
 end

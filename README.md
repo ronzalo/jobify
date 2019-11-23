@@ -1,24 +1,49 @@
-# README
+# ONE Jobify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+This project serve as backend for [Mini Jobify](https://github.com/ronzalo/mini-jobify)
 
-* Ruby version
+### Stack
 
-* System dependencies
+* Ruby 2.6
+* Ruby on Rails 6.0
+* PostgreSQL
+* Heroku
 
-* Configuration
+### Technical background
 
-* Database creation
+This app has a single endpoint, able to list favorite jobs and create new ones. The controller is under the namespace `/api/v1` in order to support applications depending on this API in case we add new features or changes without breaking the application.
 
-* Database initialization
+The API support `index`, `create` and `show` actions.
 
-* How to run the test suite
+The model was designed with multiple providers in mind, that means that the app could receive information from any client, as long as receive an ID or slug, a URL and the job details as a JSON object
 
-* Services (job queues, cache servers, search engines, etc.)
+## Configuration
 
-* Deployment instructions
+```shell
+git clone https://github.com/ronzalo/jobify
+cd jobify
+bundle install
+# Setup database
+rails db:create && rails db:migrate && rails db:seed
+rails s
+```
 
-* ...
+## Testing
+
+```shell
+rake
+```
+
+## Deployment
+
+```shell
+heroku create
+heroku run rake db:migrate
+heroku ps:scale web=1
+heroku open
+
+# Visit your favorite jobs
+curl -XGET https://your-coolapp.herokuapp.com/api/v1/favorite_jobs
+```
