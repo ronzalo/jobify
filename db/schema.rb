@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_11_19_225123) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "favorite_jobs", force: :cascade do |t|
     t.string "slug"
     t.string "url"
