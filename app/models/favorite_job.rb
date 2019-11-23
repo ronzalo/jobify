@@ -11,5 +11,6 @@
 #
 
 class FavoriteJob < ApplicationRecord
+  validates :slug, :url, presence: :true
   validates_uniqueness_of :slug, on: :create, message: "is already taken"
 end

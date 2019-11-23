@@ -3,7 +3,18 @@ module Api
     class FavoriteJobsController < ApplicationController
       before_action :set_favorite_job, only: :show
 
+      def_param_group :favorite_job do
+        param :favorite_job, Hash, :required => true do
+          param :slug, String, "Unique identifier for job", :required => true
+          param :url, String, "Full URL", :required => true
+          param :metadata, Hash, "Job as a JSON Object", :required => false
+        end
+      end
+
       # GET /api/v1/favorite_jobs
+      api :GET, "/favorite_jobs", "Get all favorite jobs"
+      returns :array_of => :favorite_job
+
       def index
         @favorite_jobs = FavoriteJob.all
 
@@ -16,6 +27,9 @@ module Api
       end
 
       # POST /api/v1/favorite_jobs
+      api :POST, "/favorite_jobs", "Save a favorite job"
+      param_group :favorite_job
+
       def create
         @favorite_job = FavoriteJob.new(favorite_job_params)
 
