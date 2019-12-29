@@ -1,7 +1,7 @@
 module Api
   module V1
     class FavoriteJobsController < ApplicationController
-      before_action :set_favorite_job, only: :show
+      before_action :set_favorite_job, only: [:show, :destroy]
 
       def_param_group :favorite_job do
         param :favorite_job, Hash, :required => true do
@@ -35,6 +35,14 @@ module Api
 
         if @favorite_job.save
           render json: @favorite_job, status: :created, location: [:api, :v1, @favorite_job]
+        else
+          render json: @favorite_job.errors, status: :unprocessable_entity
+        end
+      end
+
+      def destroy
+        if @favorite_job.destroy
+          render status: :no_content
         else
           render json: @favorite_job.errors, status: :unprocessable_entity
         end
